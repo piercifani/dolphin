@@ -167,7 +167,6 @@
 		B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9DCAC8423AAC46E002B95C8 /* TCSidewaysWiiPad.xib */; };
 		B9DCAC9023AAD98D002B95C8 /* TCSidewaysWiiPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DCAC8F23AAD98D002B95C8 /* TCSidewaysWiiPad.swift */; };
 		B9DCAC9F23AC9C83002B95C8 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DCAC9E23AC9C83002B95C8 /* GameController.framework */; };
-		B9E983E624592A6800119883 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9E983E524592A6800119883 /* GoogleService-Info.plist */; };
 		B9E983EE245A1F2700119883 /* SoftwareCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E983ED245A1F2700119883 /* SoftwareCollectionViewCell.m */; };
 		B9E983F4245A57EB00119883 /* SoftwareListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9E983F3245A57EB00119883 /* SoftwareListViewController.mm */; };
 		B9EEFBF923DA261600EAF92A /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EEFBF823DA261600EAF92A /* AboutViewController.m */; };
@@ -1375,7 +1374,6 @@
 				B945A36E2362908400B21680 /* Resources */,
 				B91BF385236BFA9A00199BA7 /* CopyFiles */,
 				B9E1ACB423B34F540072EDF0 /* Clean Bundle */,
-				B9E983E72459475900119883 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1469,7 +1467,6 @@
 				B946AF14245BFBCD0043767A /* WiiSystemUpdate.storyboard in Resources */,
 				B928112623C0A24700B53145 /* TCClassicWiiPad.xib in Resources */,
 				B971E1C8245E210400D2A698 /* NonJailbrokenNotice.xib in Resources */,
-				B9E983E624592A6800119883 /* GoogleService-Info.plist in Resources */,
 				B95A0932238275C200DBBB01 /* TCGameCubePad.xib in Resources */,
 				B996C85223D50FC600700D6F /* Dolphin.strings in Resources */,
 				B9DCAC8523AAC46E002B95C8 /* TCSidewaysWiiPad.xib in Resources */,
@@ -1594,25 +1591,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "$PROJECT_DIR/DolphiniOS/BuildResources/BuildScripts/CleanBundle.sh\n";
-		};
-		B9E983E72459475900119883 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "eval \"${GCC_PREPROCESSOR_DEFINITIONS}\"\n\nif [ ! -z $ANALYTICS ]; then\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\nfi\n";
 		};
 		B9E9E2E5238A021B00BB12A9 /* Update Entitlements */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1982,7 +1960,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46669ZA7J4;
+				DEVELOPMENT_TEAM = J5784WLHF2;
 				DOLPHIN_BUILD_TYPE = Release;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2156,7 +2134,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 46669ZA7J4;
+				DEVELOPMENT_TEAM = J5784WLHF2;
 				DOLPHIN_BUILD_TYPE = Debug;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2308,7 +2286,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46669ZA7J4;
+				DEVELOPMENT_TEAM = J5784WLHF2;
 				DOLPHIN_BUILD_TYPE = Release;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2414,7 +2392,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46669ZA7J4;
+				DEVELOPMENT_TEAM = J5784WLHF2;
 				DOLPHIN_BUILD_TYPE = Release;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2526,7 +2504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 46669ZA7J4;
+				DEVELOPMENT_TEAM = J5784WLHF2;
 				DOLPHIN_BUILD_TYPE = Debug;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2634,7 +2612,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46669ZA7J4;
+				DEVELOPMENT_TEAM = J5784WLHF2;
 				DOLPHIN_BUILD_TYPE = Release;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

@@ -77,9 +77,6 @@
 {
   SConfig::GetInstance().m_analytics_enabled = [self.m_statistics_switch isOn];
   DolphinAnalytics::Instance().ReloadConfig();
-#ifdef ANALYTICS
-  [FIRAnalytics setAnalyticsCollectionEnabled:[self.m_statistics_switch isOn]];
-#endif
 }
 
 - (IBAction)CrashReportingChanged:(id)sender

@@ -318,12 +318,6 @@
 #endif
   }
 
-#ifdef ANALYTICS
-  if (!SConfig::GetInstance().m_analytics_permission_asked)
-  {
-    [nav_controller pushViewController:[[AnalyticsNoticeViewController alloc] initWithNibName:@"AnalyticsNotice" bundle:nil] animated:true];
-  }
-#endif
   
   // Present if the navigation controller isn't empty
   if ([[nav_controller viewControllers] count] != 0)
@@ -407,17 +401,6 @@
   
   cpu_info.bAPRR = [[NSUserDefaults standardUserDefaults] boolForKey:@"aprr_jit_on"];
 
-#ifdef ANALYTICS
-  [FIRApp configure];
-#if !defined(DEBUG) && !TARGET_OS_SIMULATOR
-  [FIRAnalytics setAnalyticsCollectionEnabled:SConfig::GetInstance().m_analytics_enabled];
-  [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:[[NSUserDefaults standardUserDefaults] boolForKey:@"crash_reporting_enabled"]];
-#else
-  [FIRAnalytics setAnalyticsCollectionEnabled:false];
-  [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:false];
-#endif
-#endif
-  
   NSString* last_version = [[NSUserDefaults standardUserDefaults] stringForKey:@"last_version"];
   if (![last_version isEqualToString:version_str])
   {
@@ -426,13 +409,6 @@
     app_type = @"jailbroken";
 #else
     app_type = @"non-jailbroken";
-#endif
-
-#ifdef ANALYTICS
-    [FIRAnalytics logEventWithName:@"version_start" parameters:@{
-      @"type" : app_type,
-      @"version" : version_str
-    }];
 #endif
     
     [[NSUserDefaults standardUserDefaults] setObject:version_str forKey:@"last_version"];
@@ -453,9 +429,6 @@
     Core::SetState(Core::State::Running);
   }
 
-#ifdef ANALYTICS
-  [[FIRCrashlytics crashlytics] setCustomValue:@"active" forKey:@"app-state"];
-#endif
 }
 
 - (void)applicationWillResignActive:(UIApplication*)application
@@ -468,10 +441,6 @@
   // Write out the configuration in case we don't get a chance later
   Config::Save();
   SConfig::GetInstance().SaveSettings();
-
-#ifdef ANALYTICS
-  [[FIRCrashlytics crashlytics] setCustomValue:@"inactive" forKey:@"app-state"];
-#endif
 }
 
 - (void)applicationDidEnterBackground:(UIApplication*)application
